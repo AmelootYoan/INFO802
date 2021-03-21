@@ -1,7 +1,6 @@
 
 //imports
 var soap = require('soap');
-var stripe = require('stripe');
 var express = require('express');
 var app = express();
 var xml = require("fs").readFileSync("service.wsdl", "utf-8");
