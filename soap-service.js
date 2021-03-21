@@ -38,7 +38,7 @@ app.listen(port, function(){
 app.get("/", function(req,res){res.render("client")});
 
 app.post("/prix", function (req, res){
-    var url = 'http://localhost:8000/wsdl?wsdl';
+    var url = 'https://info802-aos.herokuapp.com/wsdl?wsdl';
     var args = { pds: req.body.pds, dist: req.body.dist };
     soap.createClient(url, function (err, client) {
 
