@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions 
-targetNamespace="http://localhost:8000/wsdl" 
+targetNamespace="https://info802-aos.herokuapp.com//wsdl" 
 xmlns:apachesoap="http://xml.apache.org/xml-soap" 
-xmlns:impl="http://localhost:8000/wsdl"
-xmlns:intf="http://localhost:8000/wsdl" 
+xmlns:impl="https://info802-aos.herokuapp.com/wsdl"
+xmlns:intf="https://info802-aos.herokuapp.com/wsdl" 
 xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
 xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://localhost:8000/wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="https://info802-aos.herokuapp.com/wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="coutLivraison">
     <complexType>
      <sequence>
@@ -87,7 +87,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
       <wsdl:port binding="impl:soapServiceSoapBinding" name="soapService">
 
-         <wsdlsoap:address location="http://localhost:8000/wsdl"/>
+         <wsdlsoap:address location="https://info802-aos.herokuapp.com/wsdl"/>
 
       </wsdl:port>
 
