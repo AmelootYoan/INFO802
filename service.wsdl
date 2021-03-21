@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+targetNamespace="http://localhost:8000/wsdl" 
+xmlns:apachesoap="http://xml.apache.org/xml-soap" 
+xmlns:impl="http://localhost:8000/wsdl"
+xmlns:intf="http://localhost:8000/wsdl" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://localhost:8000/wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="coutLivraison">
+    <complexType>
+     <sequence>
+      <element name="pds" type="xsd:int"/>
+      <element name="dist" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="coutLivraisonResponse">
+    <complexType>
+     <sequence>
+      <element name="prixLivraison" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="coutLivraisonRequest">
+
+      <wsdl:part element="impl:coutLivraison" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="coutLivraisonResponse">
+
+      <wsdl:part element="impl:coutLivraisonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="soapService">
+
+      <wsdl:operation name="coutLivraison">
+
+         <wsdl:input message="impl:coutLivraisonRequest" name="coutLivraisonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:coutLivraisonResponse" name="coutLivraisonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="soapServiceSoapBinding" type="impl:soapService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="coutLivraison">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="coutLivraisonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="coutLivraisonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="service">
+
+      <wsdl:port binding="impl:soapServiceSoapBinding" name="soapService">
+
+         <wsdlsoap:address location="http://localhost:8000/wsdl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

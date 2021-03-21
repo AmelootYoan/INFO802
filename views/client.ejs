@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>LeBonCoin ECO+</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body><br/>
+        <h1>Le Marché Est-Sans-Ciel</h1><br/>
+        <h2>Produits essentiels</h2>
+        <form action="/prix" method="post">
+            <div>     
+                <div>
+                    <label for="patates">Patates</label>
+                    <input type="number" id="patates" name="les_patates">
+                    <i>prix au kilo : 2.90€</i>
+                </div>
+                <div>
+                    <label for="tomates">Tomates</label>
+                    <input type="number" id="tomates" name="les_tomates">
+                    <i>prix au kilo : 5.90€</i>
+                </div>
+                <div>
+                    <label for="courgettes">Courgettes</label>
+                    <input type="number" id="courgettes" name="les_courgettes">
+                    <i>prix au kilo : 7.90€</i>
+                </div>
+            </div>
+            <h2>Produits non-essentiels</h2><i>(articles indisponibles en périodes de confinement, couvre-feu & contamination)</i>
+
+            <div>
+                <div>
+                    <label for="amusement">Amusement</label>
+                    <input type="number" id="amusement" name="l_amusement">
+                    <i>prix par dose(kg) : 19.90€</i>
+                </div>
+                <div>
+                    <label for="loisir">Loisir</label>
+                    <input type="number" id="loisir" name="le_loisir">
+                    <i>prix par dose(kg) : 69.00€</i>
+                </div>
+                <div>
+                    <label for="boire">Aller au bar</label>
+                    <input type="number" id="bar" name="l_alcool">
+                    <i>prix par dose(kg) : 14.88€</i>
+                </div>
+            </div><br/><br/>
+            <div>
+                <h3>Combien de km de distance ?</h3>
+                <div>
+                    <label for="Distance">Distance</label>
+                    <input type="number" id="dist" name="dist" value=0 min=0>
+                </div>
+                <h3>Combien de kgs ?</h3>
+                <div>
+                    <label for="Poids">Poids</label>
+                    <input type="number" id="pds" name="pds" value=0 min=0>
+                </div><br/>
+                <div>
+                    <input type="submit" value="Frais Livraison"/>
+                </div>
+            </div>
+        </form>
+    </body>
+</html> <!-- typo -->
