@@ -1,4 +1,7 @@
+
+//imports
 var soap = require('soap');
+var stripe = require('stripe');
 var express = require('express');
 var app = express();
 var xml = require("fs").readFileSync("service.wsdl", "utf-8");
@@ -9,6 +12,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+//service de calcul de livraison
 var serviceCalcul = {
     service : {
         soapService : {
@@ -31,12 +35,14 @@ var serviceCalcul = {
 app.set('view engine', 'ejs');
 app.use(express.json())
 app.listen(port, function(){
-    console.log("Saucisse à l'écoute...");
+    console.log("à l'écoute...");
     soap.listen(app, '/wsdl', serviceCalcul, xml, function(){console.log("Test")});
 });
 
+//page d'accueil
 app.get("/", function(req,res){res.render("client")});
 
+//page informant du prix a payer pour la livraison
 app.post("/prix", function (req, res){
     var url = 'https://info802-aos.herokuapp.com/wsdl?wsdl';
     var args = { pds: req.body.pds, dist: req.body.dist };
