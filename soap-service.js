@@ -51,7 +51,7 @@ app.post("/prix", function (req, res){
             pds: req.body.pds, 
             dist: req.body.dist}, 
             function (err, result, raw) {
-            //console.log(result);
+            console.log(result);
                 res.render('prix', {
                     pds: req.body.pds, 
                     dist: req.body.dist,
